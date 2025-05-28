@@ -1,7 +1,7 @@
 // src/components/customers/CustomerForm.jsx
 import { useState, useEffect, Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import IconX from "../../icons/IconX";
+import IconX from "../../components/icons/IconX";
 
 // Default customer object with empty values
 const defaultCustomer = {

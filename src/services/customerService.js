@@ -16,8 +16,8 @@ import {
 } from "firebase/firestore";
 import { db } from "../firebase/config"; // Adjust the import path as needed
 
-// Collection reference
-const CUSTOMERS_COLLECTION = "customers";
+// Collection reference - FIXED to match useCustomerData.js
+const CUSTOMERS_COLLECTION = "customer"; // Changed from "customers" to "customer"
 
 /**
  * Get customers with optional filtering and pagination
@@ -142,15 +142,26 @@ export const getCustomer = async (id) => {
       throw new Error("Customer not found");
     }
 
-    return {
+    const customerData = {
       id: docSnap.id,
       ...docSnap.data(),
     };
+
+    return customerData;
   } catch (error) {
     console.error("Error getting customer:", error);
     throw error;
   }
 };
+
+/**
+ * Alias for getCustomer to maintain backward compatibility
+ * Gets a single customer by ID
+ *
+ * @param {string} id - Customer ID
+ * @returns {Promise<Object>} Promise resolving to customer data
+ */
+export const getCustomerById = getCustomer;
 
 /**
  * Create a new customer
@@ -282,6 +293,7 @@ export const getCustomerJobs = async (customerId) => {
 export const customerService = {
   getCustomers,
   getCustomer,
+  getCustomerById, // Added this export
   createCustomer,
   updateCustomer,
   deleteCustomer,

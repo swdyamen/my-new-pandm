@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 import CustomerForm from "../components/customers/CustomerForm";
 import SearchFilters from "../components/customers/SearchFilters";
 import CustomerTable from "../components/customers/CustomerTable"; // Import the CustomerTable component
-import IconUserPlus from "../icons/IconUserPlus";
+import IconUserPlus from "../components/icons/IconUserPlus";
 import { useCustomerData } from "../hooks/useCustomerData";
 
 /**
@@ -168,7 +168,10 @@ const Customers = () => {
    * @param {string|number} customerId - ID of the customer
    */
   const handleViewJobs = (customerId) => {
+    console.log("handleViewJobs called with:", customerId);
+
     if (!customerId) {
+      console.log("No customer ID provided");
       Swal.fire({
         title: "Error!",
         text: "Cannot view jobs: Invalid customer ID",
@@ -176,7 +179,16 @@ const Customers = () => {
       });
       return;
     }
-    navigate(`/customers/${customerId}/jobs`);
+
+    const targetPath = `/customers/${customerId}/jobs`;
+    console.log("Attempting to navigate to:", targetPath);
+
+    try {
+      navigate(targetPath);
+      console.log("Navigation called successfully");
+    } catch (error) {
+      console.error("Navigation error:", error);
+    }
   };
 
   /**

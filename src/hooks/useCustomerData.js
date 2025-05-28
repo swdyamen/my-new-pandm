@@ -50,7 +50,7 @@ export const useCustomerData = (initialFilters = {}, pageSize = 10) => {
    */
   const fetchCustomers = useCallback(async () => {
     setLoading(true);
-    console.log("Fetching customers with filters:", filters);
+    //console.log("Fetching customers with filters:", filters);
 
     try {
       // Reference to the customers collection
@@ -125,7 +125,7 @@ export const useCustomerData = (initialFilters = {}, pageSize = 10) => {
         );
       }
 
-      console.log(`After filtering: ${filteredList.length} customers`);
+      //console.log(`After filtering: ${filteredList.length} customers`);
 
       // Apply client-side pagination
       const startIndex = currentPage * pageSize;

@@ -1,9 +1,9 @@
 // src/components/customers/CustomerTable.jsx
 import React from "react";
-import IconUser from "../../icons/IconUser";
-import IconEdit from "../../icons/IconEdit";
-import IconTrash from "../../icons/IconTrash";
-import IconTrendingUp from "../../icons/IconTrendingUp";
+import IconUser from "../../components/icons/IconUser";
+import IconEdit from "../../components/icons/IconEdit";
+import IconTrash from "../../components/icons/IconTrash";
+import IconTrendingUp from "../../components//icons/IconTrendingUp";
 
 /**
  * Enhanced customer table component with light theme and improved UI/UX
@@ -167,7 +167,9 @@ const CustomerTable = ({
 
                     {/* View jobs button with tooltip and accessibility attributes */}
                     <button
-                      onClick={() => onViewJobs(customer.id)}
+                      onClick={() => {
+                        onViewJobs(customer.id);
+                      }}
                       className="text-green-600 hover:text-green-900 transition-colors p-2 rounded-full hover:bg-green-50"
                       aria-label={`View jobs for ${customer.name}`}
                       title="View jobs"

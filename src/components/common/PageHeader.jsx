@@ -1,7 +1,8 @@
 // src/components/common/PageHeader.jsx
 import React from "react";
-import IconUserPlus from "../../icons/IconUserPlus";
-import IconPlus from "../../icons/IconPlus";
+import IconUserPlus from "../../components/icons/IconUserPlus";
+
+import IconPlus from "../../components/icons/IconPlus";
 
 const icons = {
   UserPlus: IconUserPlus,

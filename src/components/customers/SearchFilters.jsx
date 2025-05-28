@@ -1,8 +1,8 @@
 // src/components/customers/SearchFilters.jsx
 import React, { useState } from "react";
-import IconSearch from "../../icons/IconSearch";
-import IconX from "../../icons/IconX";
-import IconFilter from "../../icons/IconFilter";
+import IconSearch from "../../components/icons/IconSearch";
+import IconX from "../../components/icons/IconX";
+import IconFilter from "../../components/icons/IconFilter";
 
 /**
  * Enhanced search filters component with improved UI/UX
